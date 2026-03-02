@@ -1,0 +1,6 @@
+@PehYee_Project_HostAddress = http://localhost:5198
+
+GET {{PehYee_Project_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
