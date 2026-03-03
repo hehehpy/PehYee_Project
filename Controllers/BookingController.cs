@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PehYee_Project.Data;
 using PehYee_Project.Models;
 
 namespace PehYee_Project.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BookingController : ControllerBase
@@ -15,6 +17,8 @@ namespace PehYee_Project.Controllers
         {
             _context = context;
         }
+
+        [Authorize(Roles = UserRoles.Admin)]
 
         [HttpGet]
         public IActionResult GetAll()

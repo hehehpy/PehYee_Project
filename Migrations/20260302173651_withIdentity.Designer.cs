@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PehYee_Project.Data;
 
@@ -11,9 +12,11 @@ using PehYee_Project.Data;
 namespace PehYee_Project.Migrations
 {
     [DbContext(typeof(ADBC))]
-    partial class ADBCModelSnapshot : ModelSnapshot
+    [Migration("20260302173651_withIdentity")]
+    partial class withIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
